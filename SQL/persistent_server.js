@@ -11,10 +11,15 @@ var dbConnection = mysql.createConnection({
   user: "root",
   password: "",
   database: "chatrooom"
-});
+}); 
+
+var temp = "SELECT Messages.text Users.id FROM Messages FULL OUTER JOIN Users ON Messages.Id_Users=Users.Id FULL OUTER JOIN Rooms ON Messages.id_Rooms=Rooms.Id"
+
+var getQuery = "SELECT messages.text users.id FROM messages full OUTER JOIN users ON messages.id_users=users.id";
 
 dbConnection.connect();
-var trial= function (){dbConnection.query('INSERT INTO users (name) VALUES ("AA")', function (err, result){
+
+var trial= function (){dbConnection.query("", function (err, result){
   if(err){
     console.log(err);
   }
@@ -49,3 +54,5 @@ Lastly, we tell the server we made to listen on the given port and IP. */
 var server = http.createServer(handleRequest);
 console.log("Listening on http://" + ip + ":" + port);
 server.listen(port, ip);
+
+var getQuery = "SHOW TABLES";

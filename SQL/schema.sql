@@ -16,7 +16,7 @@ USE chat;
 
 CREATE DATABASE chatrooom;
 
-USE chat;
+USE chatrooom;
 
 DROP TABLE IF EXISTS `users`;
 
